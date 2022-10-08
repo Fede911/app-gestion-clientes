@@ -1,0 +1,38 @@
+[
+    { 
+      "dni": 12345678,
+      "nombre": "Federico",
+      "apellido": "Bigatton",
+      "email": "fede@fede.com.ar",
+      "telefono": "34340985673",
+      "direccion": "Alvar Nuñez Cabeza 1234",
+      "f_nac": "12/12/04"
+    },
+    { 
+      "dni": 17658589,
+      "nombre": "Francisco",
+      "apellido": "Perez",
+      "email": "fran@fran.com.ar",
+      "telefono": "3434890678",
+      "direccion": "Mendoza 1432",
+      "f_nac": "02/09/01"
+    },
+    { 
+      "dni": 26853849,
+      "nombre": "Maria",
+      "apellido": "Gomez",
+      "email": "maria@maria.com.ar",
+      "telefono": "3435123278",
+      "direccion": "Ramirez 332",
+      "f_nac": "14/03/98"
+    },
+    { 
+      "dni": 31567320,
+      "nombre": "Silvia",
+      "apellido": "Enriquez",
+      "email": "silvia@silvia.com.ar",
+      "telefono": "343513532",
+      "direccion": "Gran Chaco 1402",
+      "f_nac": "16/06/76"
+    }
+]

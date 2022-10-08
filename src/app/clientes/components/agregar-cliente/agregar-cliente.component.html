@@ -1,0 +1,118 @@
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">{{ title }} de Cliente</h1>
+</div>
+<form [formGroup]="clienteForm"
+    (ngSubmit)="onSubmit()">
+  <div class="row g-3">
+    <div class="col-sm-6">
+      <label for="nombre" class="form-label">Nombre/s</label>
+      <input type="text" class="form-control shadow" id="nombre" placeholder="Ingrese su nombre" 
+        formControlName="nombre">
+      <div *ngIf="nombre?.invalid && nombre?.touched" class="badge badge-danger text-danger">
+        <div *ngIf="nombre?.errors?.['required']">
+          Un nombre es requerido.
+        </div>
+        <div *ngIf="nombre?.errors?.['minlength']">
+          El nombre debe tener un mínimo de {{ nombre?.errors?.['minlength'].requiredLength }} caracteres de largo.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control shadow" id="apellido" placeholder="Ingrese su apellido"  
+        formControlName="apellido">
+        <div *ngIf="apellido?.invalid && apellido?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="apellido?.errors?.['required']">
+            Un apellido es requerido.
+          </div>
+          <div *ngIf="apellido?.errors?.['minlength']">
+            El apellido debe tener un mínimo de {{ apellido?.errors?.['minlength'].requiredLength }} caracteres de largo.
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="number" class="form-control shadow " id="dni" placeholder="12345678" 
+        formControlName="dni">
+        <div *ngIf="dni?.invalid && dni?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="dni?.errors?.['required']">
+            Un DNI es requerido.
+          </div>
+          <!-- <div *ngIf="dni?.errors?.['minlength']">
+            El DNI debe tener un mínimo de {{ dni?.errors?.['minlength'].requiredLength }} dígitos de largo.
+          </div> -->
+          <div *ngIf="dni?.invalid || dni?.errors?.['pattern']">
+            El DNI sólo admite números.
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="f_nac" class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control shadow " id="f_nac" 
+        formControlName="f_nac">
+        <div *ngIf="f_nac?.invalid && f_nac?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="f_nac?.errors?.['required']">
+            Una fecha de nacimiento es requerida.
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control shadow " id="email" placeholder="ejemplo@ejemplo.com" 
+        formControlName="email">
+        <div *ngIf="email?.invalid! && email?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="email?.errors?.['required']">
+            Un email es requerido.
+          </div>
+          <div *ngIf="email?.invalid">
+            El email debe ser válido.
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="text" class="form-control shadow " id="telefono" placeholder="XXXXXXXXX" 
+        formControlName="telefono">
+        <div *ngIf="telefono?.invalid && telefono?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="telefono?.errors?.['required']">
+            Un teléfono es requerido.
+          </div>
+          <div *ngIf="telefono?.errors?.['minlength']">
+            El número de teléfono debe tener un mínimo de {{ telefono?.errors?.['minlength'].requiredLength }} dígitos de largo.
+          </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input type="text" class="form-control shadow " id="direccion" placeholder="Av. Don Bosco 1234"  
+        formControlName="direccion">
+        <div *ngIf="direccion?.invalid && direccion?.touched" class="badge badge-danger text-danger">
+          <div *ngIf="direccion?.errors?.['required']">
+            Una dirección es requerida.
+          </div>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-3 mb-3">
+    <div class="col-6 s">
+      <button type="submit" class="btn btn-outline-primary shadow "
+        [disabled]="!clienteForm.valid">
+        {{ btntext }}
+      </button>
+    </div>
+    <div class="col-6">
+      <button type="" class="btn btn-outline-secondary shadow float-end"
+        (click)="volver()"
+      >Cancelar</button>
+    </div>
+  </div>
+</form>
+

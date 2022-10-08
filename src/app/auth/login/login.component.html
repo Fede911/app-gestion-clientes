@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 text-center mt-4">
+      <h1 class="text-primary fw-bolder">Trabajo Final</h1>
+      <h3 class="text-danger fw-bolder">Curso de Angular</h3>
+      <h4 class="text-secondary">Incluit 2022</h4>
+    </div>
+    <div class="col-3"></div>
+  </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 text-center p-5">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit( usuario )">
+              <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+              <h1 class="h3 mb-4 fw-normal">Ingrese sus credenciales</h1>
+          
+              <div class="form-floating m-3 shadow">
+                <input type="text" class="form-control shadow" id="userName" placeholder="Ingrese su nombre de usuario."
+                [(ngModel)]="usuario.userName" name="userName"
+                required>
+                <label for="userName">Usuario</label>
+              </div>
+              <div class="form-floating m-3 shadow">
+                <input type="password" class="form-control shadow" id="password" placeholder="Ingrese su password"
+                [(ngModel)]="usuario.password" name="password"
+                required>
+                <label for="password">Password</label>
+              </div>
+              <div class="form-floating m-3">
+                <small  *ngIf="error" class="text-danger fw-bolder">¡Credenciales erroneas! Verifique los datos.</small>
+              </div>
+          
+              <button class="w-50 btn btn-lg btn-outline-primary mt-3 shadow" 
+                        type="submit" [disabled]="!loginForm.form.valid">
+                Ingresar
+              </button>
+              
+              <p class="mt-5 mb-3 text-muted fw-bolder">2022</p>
+            
+            </form>
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
