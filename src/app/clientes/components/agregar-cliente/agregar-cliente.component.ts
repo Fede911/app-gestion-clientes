@@ -56,42 +56,6 @@ export class AgregarClienteComponent implements OnInit {
   }
 
   initForm(): FormGroup {
-    // return this.fb.group({
-    //   id: [ (this.idParam)? this.cliente.id : undefined, ],
-    //   dni: [
-    //     (this.idParam)? this.cliente.dni : undefined, 
-    //     [
-    //      Validators.required,
-    //     ]
-    //   ],
-    //   nombre: [
-    //     (this.idParam)? this.cliente.nombre : '', 
-    //     [ Validators.required, Validators.minLength(3) ]
-    //   ],
-    //   apellido: [
-    //     (this.idParam)? this.cliente.apellido : '', 
-    //     [ Validators.required, Validators.minLength(3) ]
-    //   ],
-    //   email: [
-    //     (this.idParam)? this.cliente.email : '', 
-    //     [ 
-    //       Validators.required, 
-    //       Validators.pattern('^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}+\.[a-z.]{0,2}$') 
-    //     ]
-    //   ],
-    //   f_nac: [
-    //     (this.idParam)? this.convertirFecha(this.cliente.f_nac) : '',
-    //     [ Validators.required ]
-    //   ],
-    //   telefono: [
-    //     (this.idParam)? this.cliente.telefono : '',
-    //     [ Validators.required ]
-    //   ],
-    //   direccion: [
-    //     (this.idParam)? this.cliente.direccion : '',
-    //     [ Validators.required ]
-    //   ]
-    // });
     return this.fb.group({
       id: (this.idParam)? this.cliente.id : 0,
       dni: 
