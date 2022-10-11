@@ -36,6 +36,9 @@ export class ListadoClientesComponent implements OnInit {
   eliminarCliente( id: number ):void {
     this.clientesService.delCliente( id );
     console.log('Ha eliminado al cliente con Id: ', id )
+    //Refrescamos el listado luego de eliminar el cliente
+    this.clientesService.getClientes()
+    .subscribe ( clientes => this.clientes = clientes);
     this.router.navigate(['clientes/listado-clientes']);
   }
 
